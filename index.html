@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Archon-Viz</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script defer src="/js/fontawesome/all.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3-array.v2.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Archon-Viz</a>
+    <button type="reset" value="Reset" class="restart_button" id="restart"  onclick=restart()>restart</button>
+  </nav>
+  <div class="upload">
+    <div class="in-upload">
+      <input class="file" type="file" id="fileUpload" />
+      <button class="uploadBut" type="button" id="upload" value="Upload" onclick="loadFile()">Upload</button>
+    </div>
+    <!-- <div id="dvCSV"></div> print o conteúdo do arquivo csv-->
+  </div>
+  <div id="container-fluid" class="container-fluid">
+    <div class="row">
+      <div class="sidebar-sticky pt-3 col-md-2 mt-2">
+        <p>Ordering from the root:</p>
+        <div id="tree_ordering" class="card tree-column"></div>
+        <p></p>
+        <div class="btn-group-vertical" role="group">
+          
+        </div>
+      </div>
+     
+      <main role="main" class="col-md-7">
+        <div class="row justify-content-md-center">
+          <div class="btn-toolbar mt-2 mb-2 mb-md-1 col">
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+          </div>
+        </div>
+        <div class="row justify-content-md-center">
+          <div id="tree_nav_bar" class="card col justify-content-md-center">
+            <div class="tool">
+              <div class="tlabel">zoom</div>
+              <div class="tbuttons">
+                <div class="toolbutton"  data-key="187" title="Zoom In (+ OR scrollwheel)" onclick="" ><i class="fas fa-search-plus tlbttn"></i></div>
+                <div class="toolbutton" data-key="189" title="Zoom Out (&minus; OR scrollwheel)" onclick="" ><i class="fas fa-search-minus tlbttn"></i></div>
+              </div>
+            </div>
+            <div class="tool">
+              <div class="tlabel">rotate</div>
+              <div class="tbuttons">
+                <div class="toolbutton" data-key="33" title="Rotate CCW (Page Up)" ><i class="fas fa-undo tlbttn"></i></div>
+                <div class="toolbutton" data-key="34" title="Rotate CW (Page Down)" ><i class="fas fa-redo tlbttn"></i></div>
+              </div>
+            </div>
+            <div class="tool">
+              <div class="tlabel">select</div>
+              <div class="tbuttons">
+                <div class="toolbutton" data-key="-38" title="Select Previous (&#8679;&uarr;)" ><i class="fas fa-angle-left tlbttn"></i></div>
+                <div class="toolbutton" data-key="-40" title="Select Next (&#8679;&darr;)"><i class="fas fa-angle-right tlbttn"></i></div>
+              </div>
+            </div>
+            <div class="tool">
+              <div class="tlabel">view</div>
+              <div class="tbuttons">
+                <div class="toolbutton" data-key="36" title="Center Root (Home)"><i class="fas fa-home tlbttn"></i></div>
+                <div class="toolbutton" data-key="35" title="Center Selected (End)"><i class="fas fa-dot-circle tlbttn"></i></div>
+              </div>
+            </div>
+            <div class="tool">
+              <div class="tlabel">toggle</div>
+              <div class="tbuttons">
+                <div class="toolbutton" data-key="32" title="Toggle Node (Space OR double-click)"><i class="fas fa-times-circle tlbttn"></i></div>
+                <div class="toolbutton" data-key="13" title="Toggle Level (Return OR &#8679;double-click)"><i class="fas fa-code-branch tlbttn"></i></div>
+                <div class="toolbutton" data-key="191" title="Toggle Labels"><i class="fas fa-font tlbttn"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div id="vis">
+          
+        </div>
+  
+        <h5>Comments</h5>
+        
+      </main>
+      <div id="right_col" class="col-md-3 mt-2">
+        <h6>Details</h6>
+         
+        <a id="modalButton" href="#" onclick=editDetails()>Edit details</a>
+        <a id="editDoneBut" href="#" onclick=saveNewNode() >Done</a>
+
+        <div id="details">
+        </div>
+
+        <div id="downloadSec">
+          <div id= "downloadCsvData" style="visibility:hidden" onclick=donwloadCsvData()>
+            <a id="donwloadCsvButton" href="#" >Donwload CSV</a>
+          </div>
+          <div id= "downloadJsonData" style="visibility:hidden" onclick=donwloadJsonData()>
+            <a id="donwloadJsonButton" href="#" >Donwload JSON</a>
+          </div>
+        </div>
+
+      </div>
+     
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="js/tree.js"></script>
+  </body>
+</html>

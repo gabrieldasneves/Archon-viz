@@ -1,0 +1,6 @@
+"Tag","Requirement text","Name","Priority [1 - Flt:Y Srt:A]","Origin","Status","Difficulty","Stability"
+PR1,"The QBS system shall allow only maintenance of current savings accounts.","","High","partners","Approved","Low","Medium"
+PR1.1,"The QBS system shall provide the following reports:","","High","end users","Proposed","High","Medium"
+PR2,"The QBS system shall offer a comprehensive on-line help system.","","High","marketing","Approved","Medium","High"
+PR2.1,"The QBS system shall use no more than 1 megabyte of disk space to maintain customer data.","","High","marketing","Approved","Medium","Medium"
+PR2.3,"Enter requirement text.","test","High","","Validated","Medium","Medium"
