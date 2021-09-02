@@ -280,22 +280,31 @@ function eraseOrder(){
   localStorage.setItem("hierarchySize", results.length);
   resultado.push(results.length);
   resultado.push(localStorage.getItem('hierarchySize'));
-  console.log(resultado);
+  //console.log( resultado);
 
 
   // Bizu: pegar o tamanho do vetor de header e deletar o número de elementos que tem
   // tentativa 1 do Bizu
 
+
   var pai = document.getElementById("tree_ordering");
-  console.log( pai.length);
-  for( i = resultado[0]/2; i < resultado[resultado.length - 2] ; i++){
-    console.log(i);
-    pai.children[i].style.display = 'none';  
+  var child = pai.getElementsByClassName("tree-card");
+
+  //console.log(typeof(child));
+  //console.log( typeof(pai));
+  //console.log( pai);
+  //console.log( typeof(child));
+  //console.log( child);
+  //console.log(resultado);
+  for(var i = resultado[0]/2; i < resultado[resultado.length - 2]; i++){
+    ///pai.children[i].style.display = 'none';
+    child[resultado[0]/2].parentNode.removeChild(child[resultado[0]/2]);
   }
   var pai = document.getElementById("details");
+  var child = pai.getElementsByClassName("row");
   //console.log(results.length);
   for(var i = resultado[0]/2; i < resultado[resultado.length - 2]; i++){
-    pai.children[i].style.display = 'none';    
+    child[resultado[0]/2].parentNode.removeChild(child[resultado[0]/2]);  
   }
 
  
