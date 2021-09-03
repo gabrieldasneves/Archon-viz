@@ -71,9 +71,13 @@ function showDetails(d) {
     var val = values[i].replace(" ", "\ ");
     var new_title = titles[i].replace(" ", "\ ");
     var aux = String(new_title);
-    //console.log(typeof(String(new_title)));
-
-    $("span[id=\"" +aux +"\"]").append( $( "<p class=\"details\">"+String(val)+"</p>" ) );
+    if(values[i].includes(".png") || values[i].includes(".jpg")){
+      $("span[id=\"" +aux +"\"]").append( $( "<img src=\" " + values[i] + " \" class=\"details\" alt=\" images \" width=\"150\" height=\"150\"  style=\"border:5px solid black\">" ) );
+    }
+    else{
+      $("span[id=\"" +aux +"\"]").append( $( "<p class=\"details\">"+String(val)+"</p>" ) );
+    }
+   
   };
   console.log("mostrar os detalhes deu certo");
 }
