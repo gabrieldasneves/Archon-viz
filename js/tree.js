@@ -72,14 +72,15 @@ function showDetails(d) {
     var new_title = titles[i].replace(" ", "\ ");
     var aux = String(new_title);
     if(values[i].includes(".png") || values[i].includes(".jpg")){
-      $("span[id=\"" +aux +"\"]").append( $( "<img src=\" " + values[i] + " \" class=\"details\" alt=\" images \" width=\"150\" height=\"150\"  style=\"border:5px solid black\">" ) );
+      $("span[id=\"" +aux +"\"]").append( $( "<p class=\"details\">"+String(val)+"</p>" ) );
+      $("span[id=\"" + "imagem" +"\"]").append( $( "<img src=\" " + values[i] + " \" class=\"details\" alt=\" images \" width=\"170\" height=\"170\"  style=\"border:5px solid black\">" ) );
     }
     else{
       $("span[id=\"" +aux +"\"]").append( $( "<p class=\"details\">"+String(val)+"</p>" ) );
     }
    
   };
-  console.log("mostrar os detalhes deu certo");
+  //console.log("mostrar os detalhes deu certo");
 }
 
 function editDetails() {
@@ -91,12 +92,15 @@ function editDetails() {
     if(element.innerHTML == ""){
       element.innerHTML = " ";
     }
+    
     element.contentEditable = true;
-    element.style.backgroundColor = "#CCCCCC";
+
+    if(element.innerHTML != undefined ){
+      element.style.backgroundColor = "#CCCCCC";
+    }
 
   });
   console.log("edit details deu certo");
-
 }
 
 function restart(){
@@ -105,7 +109,7 @@ function restart(){
 }
 
 function saveNewNode(){
-
+  console.log("dentro do saveNewNode");
   //console.log("print do que está no localStorage:");
   data = JSON.parse(localStorage.csvData);
   nodeId = localStorage.getItem("selectedNodeId"); 
@@ -118,8 +122,14 @@ function saveNewNode(){
 
   var aux = new Array();
   contenteditableArray.forEach(function(e){
-    str = (e.innerHTML);
-    aux.push(str);
+      str = (e.innerHTML);
+      //if(str.includes("<img")){
+        //aux.push(str.);
+      //} else {
+        aux.push(str);
+        console.log(str);
+     // }
+      
     });
   aux.pop();
   aux[aux.length - 1]= nodeId;
@@ -149,19 +159,24 @@ function saveNewNode(){
       data[key] = el;
     }
   });
-  aux_keys.pop();
+  console.log("Esses são os auxiliarkeys");
   console.log(aux_keys);
+  aux_keys.pop();
+  //console.log(aux_keys);
   data["columns"] = aux_keys;
   console.log("Esses são os dados com os valores do nó editado");
   console.log(data);
+
   localStorage.setItem("csvData", JSON.stringify(data));
 
+  console.log(data);
   done(data);
 
   document.getElementById('downloadCsvData').style.visibility = 'visible';
 
   document.getElementById('downloadJsonData').style.visibility = 'visible';
 
+  console.log("saindo do saveNewNode");
 }
 
 function done(d){
@@ -169,8 +184,9 @@ function done(d){
   $("#vis").html("");
   $("#details").html("");
   $("#tree_ordering").html("");
+  $(".imagem").html("");
 
-  console.log("dentro do done");
+  //console.log("dentro do done");
   console.log(d); // temos q esperar dar restart?
   redrawTree(d);
 }
@@ -237,7 +253,9 @@ function clearDetails(d) {
     var el = document.getElementsByClassName("details");
     $(el).remove();
   };
-  console.log("limpar e mostrar outros detalhes deu certo");
+
+ 
+  //console.log("limpar e mostrar outros detalhes deu certo");
 }
 
 function unselectNodes() {
@@ -272,7 +290,7 @@ function getOrdering(data) {
 var resultado = [];
 
 function eraseOrder(){
-  console.log("dentro do erase");
+  //console.log("dentro do erase");
 
   let cards = document.querySelectorAll('#tree_ordering .tree-card');
   results =[];
@@ -313,9 +331,9 @@ function eraseOrder(){
 
  
 
-  console.log("saindo do erase");
+  //console.log("saindo do erase");
 
-  return
+  
 }
 
 
