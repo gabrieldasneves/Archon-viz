@@ -1228,17 +1228,14 @@ function parseFile(){
    //console.log(el);
    el["leafId"] = i.toString();
 
-   //console.log(typeof(el["leafId"]));
    i = i + 1;
   });
-
+  
+  //Desenhando a Radial tree; 
   redrawTree(data);
-  // saving data on localStorage:
+  // Salvando dado no localStorage:
   localStorage.setItem("csvData", JSON.stringify(data));
-  //to recover data use: var data = JSON.parse(localStorage.csvData); 
   addEventListener(data);
 }
-  
-  
 
   
