@@ -6,7 +6,7 @@ Due to its large applicability, web services have been gaining more popularity. 
 
 ## Objective:
 
-This work was inspired by Chang's project that proposes an approach to deal with hierarchies directly in spreadsheet format. However, [Chang's](https://www.youtube.com/watch?v=G0efD_p_E3s) work does not create any kind of visualization and the visual representation of data can be essential to generate insights about the dataset
+This work was inspired by [Chang's](https://www.youtube.com/watch?v=G0efD_p_E3s) project that proposes an approach to deal with hierarchies directly in spreadsheet format. However, Chang's work does not create any kind of visualization and the visual representation of data can be essential to generate insights about the dataset
 
 This project aims to meet the following requirements related to the problem to be solved:
 * Requirement 1: The data explored by the application is of low volume and is in an input file in tabular format (ex.: .csv) provided by the user;
