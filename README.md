@@ -24,9 +24,26 @@ This section should list any major frameworks/libraries used to bootstrap this p
 * [D3.js](https://d3js.org/)
 * [JQuery](https://jquery.com/)
 
+### the Data sample
+
+The data we used as sample are obtained from the International Skin Imaging Collaboration (ISIC, 2021). The set used is a subset of dermoscopic images of skin lesions constituted for 232 items, a small amount but enough to simulate an image library built by a doctor from his patients. [Check it out](https://github.com/gabrieldasneves/Archon-viz/blob/main/data/lesions.csv)
+
 ### Interface
 
 ![](https://github.com/gabrieldasneves/Archon-viz/blob/main/media/derm1.PNG?raw=true)
+
+## Auxiliary buttons
+
+The zoom buttons amplify and reduce the size of the tree within the view window, if the image is larger than this area, the tree can be dragged across the screen with the mouse.
+The rotation functionality, however, rotates the tree around the root clockwise or
+counter-clockwise.
+The select buttons select the next right or left sibling node. There is
+also two view buttons where the first one returns the tree to the initial position and the second one,
+places the selected node in the center of the viewport:
+
+
+![](https://github.com/gabrieldasneves/Archon-viz/blob/main/media/c3.PNG?raw=true)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
