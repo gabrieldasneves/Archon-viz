@@ -13,7 +13,7 @@ This project aims to meet the following requirements related to the problem to b
 * Requirement 2: The application must allow users to modify hierarchically structured data values as well as reorganize the hierarchy of these data;
 * Requirement 3: The user does not need to have programming skills;
 * Requirement 4: The application must allow exporting the modified data in .csv or .json formats;
-* Requisito 5: Os dados devem ser representados de forma visual, facilitando a compreensão da hierarquia dos dados.
+* Requisito 5: Data must be represented in a visual way, making it easier to understand the data hierarchy.
 
 ### Built With
 
@@ -24,6 +24,9 @@ This section should list any major frameworks/libraries used to bootstrap this p
 * [D3.js](https://d3js.org/)
 * [JQuery](https://jquery.com/)
 
+### Interface
+
+![](https://github.com/gabrieldasneves/Archon-viz/blob/main/media/derm1.PNG?raw=true)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
