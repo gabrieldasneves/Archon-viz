@@ -1,8 +1,26 @@
 # Archon-vis (my bachelor's degree final project)
 
-## Abstract:
+### Built With
 
-Due to its large applicability, web services have been gaining more popularity. This means that more hierarchical data are generated with hierarchical, mainly in JSON or XML formatted files. However, many users still use tabular files, such as Excel spreadsheets and CSV files. Without a specific tool, visualizing and understanding fully the hierarchy surrounding the data becomes a hard task, sometimes requiring programming skills. In order to support the users leading with hierarchical data in tabular format, in this work, we present a web-based tool that allows users to load, manipulate and understand hierarchical data from tabular data. The tool was developed using web technologies and data visualization principles to represent hierarchical data through a radial tree. The tool and its functionalities are demonstrated through a case study of skin cancer images, where users can investigate different hierarchies, manipulate and export data in JSON format or keep them as tabular data.
+This section should list any major frameworks/libraries used to build this project. 
+* [JavaScript](https://www.javascript.com/)
+   <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/JavaScript.svg" width="48"> 
+
+* [CSS](https://css-tricks.com/)
+   <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/CSS.svg" width="48">  
+
+* [HTML](https://html.com/)
+           <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/HTML.svg" width="48">        
+
+* [D3.js](https://d3js.org/)
+     <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/D3-Dark.svg" width="48">  
+
+* [JQuery](https://jquery.com/)
+   <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/JQuery.svg" width="48"> 
+
+## Context:
+
+Web services are getting more popular, generating lots of hierarchical data in JSON or XML formats. But many people still use tabular files like Excel and CSV. Visualizing and understanding the hierarchy in these formats can be tough, often needing programming skills. To help users manage hierarchical data in tabular formats, we've developed a web-based tool. It lets users load, manipulate, and understand hierarchical data from tables. Built with web technologies and data visualization principles, the tool uses a radial tree to display data. We demonstrate its features with a case study on skin cancer images, allowing users to explore different hierarchies and export data in JSON or keep it in tabular form.
 
 ## Objective:
 
@@ -15,37 +33,33 @@ This project aims to meet the following requirements related to the problem to b
 * Requirement 4: The application must allow exporting the modified data in .csv or .json formats;
 * Requisito 5: Data must be represented in a visual way, making it easier to understand the data hierarchy.
 
-### Built With
 
-This section should list any major frameworks/libraries used to bootstrap this project. 
-* [JavaScript](https://www.javascript.com/)
-* [CSS](https://css-tricks.com/)
-* [HTML](https://html.com/)
-* [D3.js](https://d3js.org/)
-* [JQuery](https://jquery.com/)
 
 ### the Data sample
 
 The data we used as sample are obtained from the International Skin Imaging Collaboration (ISIC, 2021). The set used is a subset of dermoscopic images of skin lesions constituted for 232 items, a small amount but enough to simulate an image library built by a doctor from his patients. [Check it out](https://github.com/gabrieldasneves/Archon-viz/blob/main/data/lesions.csv)
 
-### Interface
-
-![](https://github.com/gabrieldasneves/Archon-viz/blob/main/media/derm1.PNG?raw=true)
-
-## Auxiliary buttons
-
-The zoom buttons amplify and reduce the size of the tree within the view window, if the image is larger than this area, the tree can be dragged across the screen with the mouse.
-The rotation functionality, however, rotates the tree around the root clockwise or
-counter-clockwise.
-The select buttons select the next right or left sibling node. There is
-also two view buttons where the first one returns the tree to the initial position and the second one,
-places the selected node in the center of the viewport:
+## Hands on!
 
 
-![](https://github.com/gabrieldasneves/Archon-viz/blob/main/media/c3.PNG?raw=true)
+https://github.com/user-attachments/assets/0d9633c4-d5d3-4477-a966-2c270682dd74
+
+
+https://github.com/user-attachments/assets/0e32bdbe-883a-4675-bc9d-c6ad269d3a0d
+
+
+
+https://github.com/user-attachments/assets/d9c0f91e-a22e-46da-82eb-caca97fb004f
+
+
+
+https://github.com/user-attachments/assets/4c5da37b-bbf6-477f-8fa2-aaf9b2341523
+
+
+
+
+
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-![](https://media2.giphy.com/media/jakQnxhPwrbOdEZDul/giphy.gif?cid=ecf05e479yyngvlbwnzb76cecmijtztow2lbtfut6o9458qz&rid=giphy.gif&ct=g)
